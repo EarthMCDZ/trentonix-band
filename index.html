@@ -1,68 +1,437 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    body {background-color: #0a0a0a}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 18.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.4px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #b40026}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.2px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 15.6px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 14.4px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #0a0a0a; min-height: 15.0px}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    li.li2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff}
-    span.s1 {font-kerning: none; background-color: rgba(10, 10, 10, 0.8)}
-    span.s2 {background-color: rgba(10, 10, 10, 0.8); -webkit-text-stroke: 0px #000000}
-    span.s3 {font-kerning: none; text-shadow: 0.0px -0.0px 20.0px rgba(255, 255, 255, 0.0039)}
-    span.s4 {font-kerning: none}
-    span.s5 {font: 12.0px 'Apple Color Emoji'; font-kerning: none}
-    span.s6 {font: 24.0px 'Apple Color Emoji'; font-kerning: none}
-    span.s7 {font-kerning: none; background-color: #171717}
-    span.s8 {font: 18.0px 'Apple Color Emoji'; font-kerning: none}
-    span.s9 {font: 18.0px 'STIX Two Math'; font-kerning: none}
-    span.s10 {font: 18.0px 'Lucida Grande'; font-kerning: none}
-    span.s11 {font: 18.0px Menlo; font-kerning: none}
-    span.s12 {font-kerning: none; background-color: #0a0a0a}
-    ul.ul1 {list-style-type: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trentonix - Post Hardcore Band from Atlanta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #c31432 0%, #240b36 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .band-name {
+            font-size: 8rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            z-index: 10;
+            animation: glitch 3s infinite;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% {
+                transform: translate(0);
+            }
+            92% {
+                transform: translate(-2px, 2px);
+            }
+            94% {
+                transform: translate(2px, -2px);
+            }
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            z-index: 10;
+            opacity: 0.9;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .location {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            z-index: 10;
+            opacity: 0.7;
+            letter-spacing: 0.2em;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c31432;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 5rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #c31432, #240b36);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .coming-soon-box {
+            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 2rem;
+            border: 2px solid #c31432;
+        }
+
+        .coming-soon-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #c31432;
+        }
+
+        .coming-soon-box p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .genre-tags {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .genre-tag {
+            background: linear-gradient(135deg, #c31432, #240b36);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .genre-tag:hover {
+            border-color: #fff;
+            transform: scale(1.05);
+        }
+
+        .newsletter-form {
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .newsletter-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #c31432;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .form-group input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid #333;
+            background: #0a0a0a;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #c31432;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #c31432, #240b36);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(195, 20, 50, 0.5);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #c31432, #240b36);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2) rotate(10deg);
+            border-color: #fff;
+        }
+
+        footer {
+            background: #0a0a0a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #c31432;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @media (max-width: 768px) {
+            .band-name {
+                font-size: 4rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+
+            .form-group {
+                flex-direction: column;
+            }
+
+            .form-group input {
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1"><b>TRENTONIX</b><b></b></span></p>
-<ul class="ul1">
-  <li class="li2"><span class="s2"><b></b></span><span class="s1"><b>About</b><b></b></span></li>
-  <li class="li2"><span class="s2"><b></b></span><span class="s1"><b>Music</b><b></b></span></li>
-  <li class="li2"><span class="s2"><b></b></span><span class="s1"><b>Connect</b><b></b></span></li>
-</ul>
-<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 96.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s3"><b>TRENTONIX</b></span></h1>
-<p class="p4"><span class="s4">Post Hardcore • Emo • Metalcore</span></p>
-<p class="p5"><span class="s4">ATLANTA, GA</span></p>
-<p class="p6"><span class="s5">🔥</span><span class="s4"><b> NEW BAND ALERT</b></span></p>
-<h2 style="margin: 0.0px 0.0px 24.0px 0.0px; font: 36.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s4"><b>About</b></span></h2>
-<p class="p8"><span class="s4"><b>POST HARDCORE</b></span></p>
-<p class="p8"><span class="s4"><b>EMO</b></span></p>
-<p class="p8"><span class="s4"><b>METALCORE</b></span></p>
-<p class="p9"><span class="s4">Born from the ashes of Broken Hip Socket, an experimental death metal project that pushed boundaries and challenged conventions, Trentonix takes a new direction—channeling that same intensity and creativity into the realms of post-hardcore, emo, and metalcore. We're an emerging force in the Atlanta hardcore scene, blending raw aggression with emotional depth and crushing power. Currently in the studio crafting our sound and preparing to unleash something fierce on the world. This is just the beginning.</span></p>
-<h2 style="margin: 0.0px 0.0px 24.0px 0.0px; font: 36.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s4"><b>Music</b></span></h2>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; text-align: center; font: 24.0px Arial; color: #b40026; -webkit-text-stroke: #b40026"><span class="s6">🎸</span><span class="s4"><b> In The Studio</b></span></h3>
-<p class="p11"><span class="s4">We're currently working on our debut material. Heavy riffs, raw emotion, and unfiltered energy are coming soon. Stay tuned for updates on our first releases.</span></p>
-<h2 style="margin: 0.0px 0.0px 24.0px 0.0px; font: 36.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s4"><b>Live Shows</b></span></h2>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; text-align: center; font: 24.0px Arial; color: #b40026; -webkit-text-stroke: #b40026"><span class="s6">🤘</span><span class="s4"><b> Preparing for Battle</b></span></h3>
-<p class="p11"><span class="s4">We're gearing up to hit the stage and bring the chaos. Tour dates and show announcements will be posted here. Get ready to witness Trentonix live.</span></p>
-<h2 style="margin: 0.0px 0.0px 24.0px 0.0px; font: 36.0px Arial; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s4"><b>Stay Connected</b></span></h2>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 21.6px Arial; color: #b40026; -webkit-text-stroke: #b40026"><span class="s7"><b>Join The Movement</b><b></b></span></h3>
-<p class="p2"><span class="s7">Be the first to know when we drop new music, announce shows, and release exclusive content.</span></p>
-<p class="p13"><span class="s4"></span><br></p>
-<p class="p14"><span class="s7"><b>Subscribe</b><b></b></span></p>
-<p class="p2"><span class="s8">📷</span><span class="s4"> </span><span class="s9">𝕏</span><span class="s4"> </span><span class="s10"><b>▶</b></span><span class="s4"> </span><span class="s8">🎵</span><span class="s4"> </span><span class="s11"><b>✉</b><b></b></span></p>
-<p class="p15"><span class="s12">© 2025 Trentonix. Atlanta, GA. All rights reserved.</span></p>
+    <nav>
+        <div class="logo">TRENTONIX</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#connect">Connect</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1 class="band-name">TRENTONIX</h1>
+        <p class="tagline">Post Hardcore • Emo • Metalcore</p>
+        <p class="location">ATLANTA, GA</p>
+        <div class="status-badge">🔥 NEW BAND ALERT</div>
+    </div>
+
+    <section id="about">
+        <h2>About</h2>
+        <div class="genre-tags">
+            <div class="genre-tag">POST HARDCORE</div>
+            <div class="genre-tag">EMO</div>
+            <div class="genre-tag">METALCORE</div>
+        </div>
+        <p style="font-size: 1.3rem; line-height: 1.8; opacity: 0.9; text-align: center; margin-top: 2rem;">
+            Born from the ashes of Broken Hip Socket, an experimental death metal project that pushed boundaries and challenged conventions, Trentonix takes a new direction—channeling that same intensity and creativity into the realms of post-hardcore, emo, and metalcore. We're an emerging force in the Atlanta hardcore scene, blending raw aggression with emotional depth and crushing power. Currently in the studio crafting our sound and preparing to unleash something fierce on the world. This is just the beginning.
+        </p>
+    </section>
+
+    <section id="music">
+        <h2>Music</h2>
+        <div class="coming-soon-box">
+            <h3>🎸 In The Studio</h3>
+            <p>We're currently working on our debut material. Heavy riffs, raw emotion, and unfiltered energy are coming soon. Stay tuned for updates on our first releases.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Live Shows</h2>
+        <div class="coming-soon-box">
+            <h3>🤘 Preparing for Battle</h3>
+            <p>We're gearing up to hit the stage and bring the chaos. Tour dates and show announcements will be posted here. Get ready to witness Trentonix live.</p>
+        </div>
+    </section>
+
+    <section id="connect">
+        <h2>Stay Connected</h2>
+        <div class="newsletter-form">
+            <h3>Join The Movement</h3>
+            <p style="opacity: 0.8;">Be the first to know when we drop new music, announce shows, and release exclusive content.</p>
+            <div class="form-group">
+                <input type="email" placeholder="Enter your email" id="emailInput">
+                <button class="btn" onclick="subscribe()">Subscribe</button>
+            </div>
+            <p id="subscribeMessage" style="margin-top: 1rem; color: #c31432; font-weight: 700; display: none;"></p>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="Twitter/X">𝕏</a>
+            <a href="#" title="YouTube">▶</a>
+            <a href="#" title="TikTok">🎵</a>
+            <a href="#" title="Email">✉</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Trentonix. Atlanta, GA. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        function subscribe() {
+            const email = document.getElementById('emailInput').value;
+            const message = document.getElementById('subscribeMessage');
+            
+            if (email && email.includes('@')) {
+                message.textContent = '🔥 Thanks for subscribing! You\'re on the list.';
+                message.style.display = 'block';
+                document.getElementById('emailInput').value = '';
+            } else {
+                message.textContent = '⚠️ Please enter a valid email address.';
+                message.style.display = 'block';
+            }
+        }
+
+        document.getElementById('emailInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                subscribe();
+            }
+        });
+    </script>
 </body>
 </html>
